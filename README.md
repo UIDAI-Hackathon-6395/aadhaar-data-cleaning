@@ -2,7 +2,7 @@
 
 A comprehensive data cleaning and preprocessing pipeline for Aadhaar biometric, demographic, and enrollment datasets. This project provides automated data cleansing workflows designed for UIDAI 2026 hackathon analysis.
 
-## 📋 Table of Contents
+## Table of Contents
 - [Overview](#overview)
 - [Project Structure](#project-structure)
 - [Datasets](#datasets)
@@ -29,6 +29,8 @@ This project contains Jupyter notebooks and cleaned datasets for processing and 
 aadhaar-data-cleaning/
 ├── README.md                          # Project documentation
 ├── Analysis.pbix                      # Power BI analytics dashboard
+├── Indian_States.csv                  # Reference: All Indian states and union territories
+├── Districts_in_India.csv             # Reference: All districts across Indian states
 ├── Data-Cleansing/                    # Jupyter notebooks for data processing
 │   ├── biometric_data_cleaning.ipynb  # Biometric data cleaning pipeline
 │   ├── demographic_data_cleaning.ipynb # Demographic data cleaning pipeline
@@ -70,6 +72,38 @@ aadhaar-data-cleaning/
 - **Segments:** 3 CSV files
 - **File Size:** Distributed for performance optimization
 - **Contents:** Enrollment timestamps, status, and metadata
+
+## Reference Data Files
+
+### Indian States
+**File:** `Indian_States.csv`
+
+A comprehensive reference file containing all Indian states and union territories.
+
+**Usage:**
+- Lookup table for state-level validation in demographic data
+- Cross-reference for geographic data quality checks
+- Used in data cleansing pipelines for standardizing state information
+- Supports state-wise data aggregation and analysis
+
+### Districts in India
+**File:** `Districts_in_India.csv`
+
+A complete reference file listing all districts across Indian states and union territories.
+
+**Usage:**
+- Validation of district information in demographic records
+- Geographical hierarchies (State → District → Area)
+- District-level data aggregation and analysis
+- Cross-referencing with enrollment and demographic data
+- Ensuring data consistency across state and district boundaries
+
+**Integration with Cleaning Pipelines:**
+- These reference files are used in the data cleansing notebooks to:
+  - Validate state and district entries against authoritative lists
+  - Identify and correct misspelled or invalid geographic data
+  - Fill missing state/district information where possible
+  - Generate geographic consistency reports
 
 ## Data Cleansing Notebooks
 
